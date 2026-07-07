@@ -59,7 +59,7 @@ export default function Navbar() {
             </div>
           </button>
           <a
-            href="/ki-srey-nith-cv.pdf"
+            href="/resume.pdf"
             download="KI_SREY_NITH_CV.pdf"
             className="font-mono text-[12.5px] font-semibold bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 px-4 py-2 rounded-lg hover:opacity-85 transition-opacity"
           >
