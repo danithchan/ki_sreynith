@@ -1,4 +1,5 @@
 import profile from '../assets/profile.png';
+import TypingText from '../component/TypingText';
 export default function Home() {
     return (
         <section
@@ -6,14 +7,14 @@ export default function Home() {
             className="pt-10 pb-20 border-b border-neutral-200 dark:border-neutral-800">
             <div className="grid lg:grid-cols-2 gap-5 items-center">
                 <div>
-                    <h1 className="font-display font-bold text-5xl leading-tight mb-6 animate-fade-up" style={{ animationDelay: '0ms' }}>
-                        Hi, I'm Nyth
-                         <div className="text-black-500 text-2xl font-bold">Fullstack Developer</div>
+                    <h1 className="font-display font-bold text-6xl leading-tight mb-4 animate-fade-up" style={{ animationDelay: '0ms' }}>
+                        Hi, I'm Ki
+                        <br />
+                        <span className="text-pink-500">
+                            <TypingText text="Sreynith" speed={150} deleteSpeed={70} startDelay={400} />
+                        </span>
+                        <div className="text-black-500 text-xl max-w-lg mb-8  font-bold">Fullstack Developer | Computer Science Student</div>
                     </h1>
-                    <p className="text-lg text-neutral-500 max-w-lg mb-8 animate-fade-up" style={{ animationDelay: '120ms' }}>
-                        I build complete systems end to end, from database schema
-                        to the interface people actually use.
-                    </p>
                     <div className="flex gap-4 animate-fade-up" style={{ animationDelay: '240ms' }}>
                         <a
                             href="#projects"
@@ -34,7 +35,7 @@ export default function Home() {
                     <img
                         src={profile}
                         alt="Profile"
-                        className="w-320px lg:w-00px object-contain drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+                        className="relative w-96 h-full object-cover rounded-[58%_42%_32%_68%/58%_32%_68%_42%] shadow-2xl animate-shake hover:scale-105 transition-transform duration-500"
                     />
                 </div>
             </div>

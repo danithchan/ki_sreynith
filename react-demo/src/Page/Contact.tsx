@@ -6,7 +6,7 @@ type ContactCard = {
   value: string;
   sub: string;
   href?: string;
-  color: 'cyan' | 'rose' | 'purple' | 'blue';
+  color: 'blue';
   icon: 'mail' | 'phone' | 'location' | 'telegram';
 };
 
@@ -16,7 +16,7 @@ const contactCards: ContactCard[] = [
     value: 'danithchan99@gmail.com',
     sub: 'Drop me a line anytime',
     href: import.meta.env.VITE_GMAIL,
-    color: 'cyan',
+    color: 'blue',
     icon: 'mail',
   },
   {
@@ -24,14 +24,14 @@ const contactCards: ContactCard[] = [
     value: '+855 92 91 6500',
     sub: 'Available for calls/WhatsApp',
     href: 'tel:+85592916500',
-    color: 'rose',
+    color: 'blue',
     icon: 'phone',
   },
   {
     label: 'LOCATION',
     value: 'Cambodia, Phnom Penh',
     sub: "Let's meet for coffee",
-    color: 'purple',
+    color: 'blue',
     icon: 'location',
   },
   {
@@ -45,10 +45,7 @@ const contactCards: ContactCard[] = [
 ];
 
 const colorMap: Record<ContactCard['color'], string> = {
-  cyan: 'bg-cyan-500/10 text-cyan-500 dark:text-cyan-400 border-cyan-500/20',
-  rose: 'bg-rose-500/10 text-rose-500 dark:text-rose-400 border-rose-500/20',
-  purple: 'bg-purple-500/10 text-purple-500 dark:text-purple-400 border-purple-500/20',
-  blue: 'bg-blue-500/10 text-blue-500 dark:text-blue-400 border-blue-500/20',
+  blue: "bg-pink-100 text-pink-500 border-pink-200 dark:bg-pink-500/10 dark:text-pink-400 dark:border-pink-500/20",
 };
 
 function CardIcon({ name }: { name: ContactCard['icon'] }) {
@@ -80,8 +77,7 @@ function CardIcon({ name }: { name: ContactCard['icon'] }) {
 }
 
 const inputClass =
-  'w-full px-4 py-3 rounded-lg bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-[14px] placeholder:text-neutral-400 dark:placeholder:text-neutral-600 focus:outline-none focus:border-neutral-500 dark:focus:border-neutral-500 transition-colors';
-
+  "w-full px-4 py-3 rounded-lg bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-[14px] placeholder:text-neutral-400 dark:placeholder:text-neutral-600 focus:outline-none focus:border-pink-400 dark:focus:border-pink-400 transition-colors";
 export default function Contact() {
   const [form, setForm] = useState({ firstName: '', email: '', phone: '', message: '' });
 
@@ -116,7 +112,7 @@ export default function Contact() {
               <Reveal key={card.label} delayMs={i * 90}>
                 <Wrapper
                   {...(card.href ? { href: card.href } : {})}
-                  className="flex items-center gap-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-5 hover:border-neutral-400 dark:hover:border-neutral-500 hover:-translate-y-0.5 hover:shadow-md transition-all duration-200"
+                  className="flex items-center gap-4 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900/60 p-5 hover:border-pink-300 dark:hover:border-pink-500 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-pink-200/20 transition-all duration-300"
                 >
                   <div className={`w-13 h-13 shrink-0 rounded-xl border flex items-center justify-center ${colorMap[card.color]}`}>
                     <CardIcon name={card.icon} />
@@ -139,7 +135,7 @@ export default function Contact() {
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div>
               <label className="block text-[13px] font-semibold mb-1.5" htmlFor="firstName">
-                First Name<span className="text-neutral-400">*</span>
+                First Name<span className="text-pink-400">*</span>
               </label>
               <input
                 id="firstName"
@@ -155,7 +151,7 @@ export default function Contact() {
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-[13px] font-semibold mb-1.5" htmlFor="email">
-                  Your Email<span className="text-neutral-400">*</span>
+                  Your Email<span className="text-pink-400">*</span>
                 </label>
                 <input
                   id="email"
@@ -184,8 +180,8 @@ export default function Contact() {
             </div>
 
             <div>
-              <label className="block text-[13px] font-semibold mb-1.5" htmlFor="message">
-                Your Message<span className="text-neutral-400">*</span>
+              <label className="block text-[13px] font-semibold mb-1.5 text-neutral-700 dark:text-neutral-200" htmlFor="message">
+                Your Message<span className="text-pink-400">*</span>
               </label>
               <textarea
                 id="message"
@@ -201,7 +197,7 @@ export default function Contact() {
             <div className="flex items-center justify-between flex-wrap gap-3">
               <button
                 type="submit"
-                className="px-8 py-3 rounded-full bg-neutral-900 text-white dark:bg-neutral-100 dark:text-neutral-900 font-mono text-[13px] font-bold tracking-wide hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 transition-all"
+                className="px-8 py-3 rounded-full bg-linear-to-r from-pink-400 via-pink-500 to-rose-400 text-white font-mono text-[13px] font-bold tracking-wide hover:from-pink-500 hover:via-pink-600 hover:to-rose-600 hover:-translate-y-1 hover:shadow-xl hover:shadow-pink-300/40 active:translate-y-0 transition-all duration-300"
               >
                 SUBMIT
               </button>

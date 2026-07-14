@@ -24,7 +24,7 @@ export default function Navbar() {
     <div className="sticky top-0 z-50 backdrop-blur bg-white/85 dark:bg-neutral-950/85 border-b border-neutral-200 dark:border-neutral-800">
       <div className="max-w-5xl mx-auto flex items-center justify-between px-6 py-4">
         <div className="font-display font-bold text-[17px] flex items-center gap-2">
-          Nyth
+         <span className="text-pink-500">Nith</span> 
         </div>
 
         <nav className="hidden sm:flex gap-1 font-mono text-[12.5px]">

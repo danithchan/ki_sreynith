@@ -42,3 +42,44 @@ body {
     transition-duration: 0.001ms !important;
   }
 }
+/* Playful shake for the profile picture */
+@keyframes shake {
+  0%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-3px); }
+  40% { transform: translateY(2px); }
+  60% { transform: translateY(-2px); }
+  80% { transform: translateY(1px); }
+}
+
+.animate-shake {
+  animation: shake 3.5s ease-in-out infinite;
+}
+
+.animate-shake:hover {
+  animation-play-state: paused;
+}
+.marquee {
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  gap: 14px;
+  animation: marquee 18s linear infinite;
+}
+
+.marquee:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-33.333%);
+  }
+}
